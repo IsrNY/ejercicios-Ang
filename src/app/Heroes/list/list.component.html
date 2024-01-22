@@ -1,0 +1,16 @@
+<h3>Listado de heros</h3>
+@if (deletedHero) {
+<h3>Jiro eliminado: <small class="text-danger">{{deletedHero}}</small></h3>
+} @else {
+  <h3>No se ha borrado nada</h3>
+}
+@if (heroNames.length > 0) {
+<button (click)="removeLastHero()" class="btn btn-outline-danger">Eliminar ultimo jiro</button>
+}
+<ul class="mt-2 list-group">
+
+  @for (name of heroNames; track $index) {
+      <li class="list-group-item">{{name}}</li>
+  }
+</ul>
+
